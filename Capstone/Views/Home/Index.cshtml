@@ -1,8 +1,90 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome!!!!!</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .notification {
+        background-color: #ffa07a;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: #f2f2f2;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .button {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+</style>
+
+<html>
+<head>
+    <title>sample page</title>
+    <h1>WELCOME BACK DEVIN</h1>
+
+</head>
+
+
+
+<body>
+    <table>
+        <tr>
+            <td>Line of Text 1</td>
+            <td class="button-container">
+                <button class="button">Button 1</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Line of Text 2</td>
+            <td class="button-container">
+                <button class="button">Button 2</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Line of Text 3</td>
+            <td class="button-container">
+                <button class="button">Button 3</button>
+            </td>
+        </tr>
+       
+    </table>
+
+
+
+</body>
+</html>
