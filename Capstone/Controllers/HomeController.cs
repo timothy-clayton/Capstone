@@ -18,15 +18,24 @@ namespace Capstone.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Aggregate()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Users()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
+        }
+
+        public IActionResult Report()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
         }
     }
 }
