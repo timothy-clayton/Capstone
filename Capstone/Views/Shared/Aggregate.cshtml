@@ -3,12 +3,179 @@
 *@
 @{
 }
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>sample page</title>
+    <title>Dynamic Form</title>
+    <style>
+        /* Body background color */
+        body {
+            background-color: #333;
+            color: #880000; /* Dark red text color */
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 200vh;
+            flex-direction: column;
+        }
+
+        /* Container for the dropdowns */
+        .dropdown-container {
+            width: 500px;
+            border: 3px solid #880000; /* Dark red border */
+            border-radius: 10px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            margin-bottom: 10px;
+        }
+
+        /* Square form container */
+        .square-form {
+            width: 500px;
+            text-align: center;
+            height: 600px;
+            background-color: #fff; /* White background */
+            border: 2px solid #880000; /* Dark red border */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Form label styles */
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Form input styles */
+        input[type="text"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #880000; /* Dark red border */
+            margin-bottom: 10px;
+        }
+
+        /* Form submit button styles */
+        button[type="submit"] {
+            background-color: #880000; /* Dark red background */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <h1>sample h1</h1>
+    <div class="page-container">
+        <!-- Dropdown container -->
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <label for="form-select">Select Team:</label>
+                <select id="form-select" onchange="updateForm()">
+                    <option value="form1">Scrum Report</option>
+                    <option value="form2">Test</option>
+                    <option value="form3">Test</option>
+                </select>
+            </div>
+
+            <div class="dropdown">
+                <label for="form-select">Select Student:</label>
+                <select id="form-select" onchange="updateForm()">
+                    <option value="student1">Student 1</option>
+                    <option value="student2">Student 2</option>
+                    <option value="student3">Student 3</option>
+                </select>
+            </div>
+
+            <div class="dropdown">
+                <label for="form-select">Select Date</label>
+                <select id="form-select" onchange="updateForm()">
+                    <option value="student1">September 1st, 2024</option>
+                    <option value="student2">September 14th, 2024</option>
+                    <option value="student3">October 1st, 2024</option>
+                </select>
+            </div>
+            <button type="submit">Search</button>
+        </div>
+
+        <div class="square-form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Team</th>
+                        <th>View Scrum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-04-24</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Team Scrum</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-25</td>
+                        <td>Jane</td>
+                        <td>Smith</td>
+                        <td>Team Scrum</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-25</td>
+                        <td>Jacob</td>
+                        <td>Zall</td>
+                        <td>Team Scrum</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-25</td>
+                        <td>Tim</td>
+                        <td>Clayton</td>
+                        <td>Team Scrum</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Square form -->
+        <div class="square-form">
+            <label>Student: Jacob Zall</label>
+            <label>Team: Scrum Report</label>
+            <label>Scrum Report (01/01/2024)</label>
+            <form>
+                <label for="input1">Question 1:</label>
+                <input type="text" id="input1" name="input1" placeholder="Answer 1"><br>
+
+                <label for="input2">Question 2:</label>
+                <input type="text" id="input2" name="input2" placeholder="Answer 2"><br>
+
+                <label for="input3">Question 3:</label>
+                <input type="text" id="input3" name="input3" placeholder="Answer 3"><br>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
