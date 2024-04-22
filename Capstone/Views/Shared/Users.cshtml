@@ -3,12 +3,134 @@
 *@
 @{
 }
-
 <html>
 <head>
-    <title>sample page</title>
+    <title>User Management</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>sample h1</h1>
+    <h1>User Management</h1>
+
+    <select id="groupSelect">
+        <option value="all">All</option>
+        <option value="Project Management">Project Management</option>
+        <option value="Scrum Report">Scrum Report</option>
+        <option value="No Team">No Team</option>
+    </select>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>User Type ID</th>
+                <th>Group Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tim</td>
+                <td>Clay</td>
+                <td>timclay@gmail.com</td>
+                <td>1</td>
+                <td>Scrum Report</td>
+                <td><button class="changeTeamBtn">Change Team</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jackie</td>
+                <td>Lin</td>
+                <td>Jackielin@gmail.com</td>
+                <td>1</td>
+                <td>Scrum Report</td>
+                <td><button class="changeTeamBtn">Change Team</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jacob</td>
+                <td>Zall</td>
+                <td>JacobZall@gmail.com</td>
+                <td>1</td>
+                <td>Scrum Report</td>
+                <td><button class="changeTeamBtn">Change Team</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>John</td>
+                <td>Doe</td>
+                <td>JOhndoe@gmail.com</td>
+                <td>1</td>
+                <td>Project Management</td>
+                <td><button class="changeTeamBtn">Change Team</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const groupSelect = document.getElementById('groupSelect');
+            const tableRows = document.querySelectorAll('#userTable tbody tr');
+
+            groupSelect.addEventListener('change', function () {
+                const selectedGroup = groupSelect.value;
+
+                tableRows.forEach(function (row) {
+                    const groupCell = row.cells[5];
+                    if (selectedGroup === 'all' || groupCell.textContent === selectedGroup) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+
+            // Add event listener to the change team buttons
+            const changeTeamBtns = document.querySelectorAll('.changeTeamBtn');
+            changeTeamBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const row = btn.closest('tr');
+                    const groupCell = row.cells[5];
+                    const currentTeam = groupCell.textContent;
+
+                    // Simulate changing the team (you can replace this with your own logic)
+                    switch (currentTeam) {
+                        case 'Project Management':
+                            groupCell.textContent = 'Scrum Report';
+                            break;
+                        case 'Scrum Report':
+                            groupCell.textContent = 'Project Management';
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
