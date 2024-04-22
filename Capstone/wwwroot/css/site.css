@@ -1,22 +1,95 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #8b0000;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+body {
+    background-color: #ffffff;
+    color: #212121;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #8b0000;
+}
+
+button {
+    background-color: #8b0000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #6b0000;
+    }
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #8b0000;
+    background-color: rgba(139, 0, 0, 0.1);
+    color: #212121;
+}
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #8b0000;
+        outline: none;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #8b0000;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(139, 0, 0, 0.1);
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(139, 0, 0, 0.05);
+}
+
+th {
+    background-color: #8b0000;
+    color: #ffffff;
 }
