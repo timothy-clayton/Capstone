@@ -1,194 +1,193 @@
 ﻿
 @{
 }
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Dynamic Form</title>
-        <style>
-            /* Body background color */
-            body {
-                color: #880000; /* Dark red text color */
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Form</title>
+    <style>
+        /* Body background color */
+        body {
+            color: #880000; /* Dark red text color */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-            .page-container {
-                
-                justify-content: center;
-                text-align: center;
-                height: 250vh;
-                
-            }
+        .page-container {
+            justify-content: center;
+            text-align: center;
+            height: 250vh;
+        }
 
-            /* Parent container for dropdowns and square form */
-            .container {
-                display: flex;
-                justify-content: flex-start; /* Align items to the left */
-                align-items: flex-start;
-                width: 1000%;
-                margin-bottom: 20px; /* Add space below the container */
-            }
+        /* Parent container for dropdowns and square form */
+        .container {
+            display: flex;
+            justify-content: flex-start; /* Align items to the left */
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 20px; /* Add space below the container */
+        }
 
-            /* Container for the dropdowns */
-            .dropdown-container {
-                padding: 20px;
-                border-radius: 10px;
-                margin-right: 20px; /* Add space between dropdown-container and square-form */
-            }
+        /* Dropdown container styles */
+        .dropdown-container {
+            padding: 20px;
+            border-radius: 10px;
+            margin-right: 20px; /* Add space between dropdown-container and square-form */
+        }
 
-            /* Dropdown styles */
-            .dropdown {
-                margin-bottom: 10px;
-                text-align: left; /* Align dropdown items to the left */
-            }
+        /* Dropdown styles */
+        .dropdown {
+            margin-bottom: 10px;
+            text-align: left; /* Align dropdown items to the left */
+        }
 
-            /* Square form container */
-            .square-form {
-                width: 100%; /* Adjust width */
-                height: 800px; /* Adjust height */
-                background-color: #fff; /* White background */
-                border: 2px solid #880000; /* Dark red border */
-                border-radius: 10px;
-                padding: 20px;
-            }
+        /* Card container styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+        }
 
-        .question-square-form {
-            width: 150%; /* Adjust width */
-            height: 800px; /* Adjust height */
+        /* Card styles */
+        .card {
+            width: calc(33.33% - 20px); /* Adjust card width */
             background-color: #fff; /* White background */
             border: 2px solid #880000; /* Dark red border */
             border-radius: 10px;
             padding: 20px;
         }
 
-        
+        /* Card content styles */
+        .card-content {
+            margin-bottom: 10px;
+        }
 
-            /* Form label styles */
-            label {
-                display: block;
-                margin-bottom: 5px;
-            }
+        /* Form label styles */
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
 
-            /* Form input styles */
-            input[type="text"] {
-                width: calc(100% - 40px);
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid #880000; /* Dark red border */
-                margin-bottom: 10px;
-            }
+        /* Form input styles */
+        input[type="text"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #880000; /* Dark red border */
+            margin-bottom: 10px;
+        }
 
-            /* Form submit button styles */
-            button[type="submit"] {
-                background-color: #880000; /* Dark red background */
-                color: #fff; /* White text color */
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="page-container">
-            <div class="container">
-                <!-- Dropdown container -->
-                <div class="dropdown-container">
-                    <div class="dropdown">
-                        <label for="form-select">Select Team:</label>
-                        <select id="form-select" onchange="updateForm()">
-                            <option value="form1">Scrum Report</option>
-                            <option value="form2">Test</option>
-                            <option value="form3">Test</option>
-                        </select>
-                    </div>
-
-                    <div class="dropdown">
-                        <label for="form-select">Select Student:</label>
-                        <select id="form-select" onchange="updateForm()">
-                            <option value="student1">Student 1</option>
-                            <option value="student2">Student 2</option>
-                            <option value="student3">Student 3</option>
-                        </select>
-                    </div>
-
-                    <div class="dropdown">
-                        <label for="form-select">Select Date</label>
-                        <select id="form-select" onchange="updateForm()">
-                            <option value="student1">September 1st, 2024</option>
-                            <option value="student2">September 14th, 2024</option>
-                            <option value="student3">October 1st, 2024</option>
-                        </select>
-                    </div>
-                    <button type="submit">Search</button>
+        /* List styles */
+        li {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="container">
+            <!-- Dropdown container -->
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <label for="form-select">Select Team:</label>
+                    <select id="form-select" onchange="updateForm()">
+                        <option value="form1">Team Report</option>
+                        <option value="form2">Test</option>
+                        <option value="form3">Test</option>
+                    </select>
                 </div>
 
-                <!-- Square form -->
-                <div class="square-form">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Team</th>
-                                <th>View Scrum</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2024-04-24</td>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>Team Scrum</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <tr>
-                                <td>2024-04-25</td>
-                                <td>Jane</td>
-                                <td>Smith</td>
-                                <td>Team Scrum</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <tr>
-                                <td>2024-04-25</td>
-                                <td>Jacob</td>
-                                <td>Zall</td>
-                                <td>Team Scrum</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <tr>
-                                <td>2024-04-25</td>
-                                <td>Tim</td>
-                                <td>Clayton</td>
-                                <td>Team Scrum</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                    </table>
+                <div class="dropdown">
+                    <label for="form-select">Select Student:</label>
+                    <select id="form-select" onchange="updateForm()">
+                        <option value="student1">Student 1</option>
+                        <option value="student2">Student 2</option>
+                        <option value="student3">Student 3</option>
+                        <option value ="All">All</option>
+                    </select>
                 </div>
+
+                <div class="dropdown">
+                    <label for="form-select">Select Date</label>
+                    <select id="form-select" onchange="updateForm()">
+                        <option value="student1">September 1st, 2024</option>
+                        <option value="student2">September 14th, 2024</option>
+                        <option value="student3">October 1st, 2024</option>
+                        <option value="All dates">All Dates</option>
+                    </select>
+                </div>
+                <button type="submit">Search</button>
             </div>
 
-            <!-- Square form -->
-        <div class="question-square-form">
-                <label>Student: Jacob Zall</label>
-                <label>Team: Scrum Report</label>
-                <label>Scrum Report (01/01/2024)</label>
-                <form>
-                    <label for="input1">Question 1:</label>
-                    <input type="text" id="input1" name="input1" placeholder="Answer 1"><br>
-
-                    <label for="input2">Question 2:</label>
-                    <input type="text" id="input2" name="input2" placeholder="Answer 2"><br>
-
-                    <label for="input3">Question 3:</label>
-                    <input type="text" id="input3" name="input3" placeholder="Answer 3"><br>
-                </form>
+            <!-- Card container -->
+            <div class="card-container">
+                <!-- Card for each entry -->
+                <div class="card">
+                    <div class="card-content">
+                        <strong>Date:</strong> 2024-04-24<br>
+                        <strong>First Name:</strong> John<br>
+                        <strong>Last Name:</strong> Doe<br>
+                        <strong>Team:</strong> Team Scrum<br>
+                        <strong>Questions:</strong><br>
+                        <label for="input1">What did you accomplish last sprint?</label>
+                        <li>We got done a lot from last sprint</li>
+                        <label for="input2">What will you do next sprint?</label>
+                        <li>We will finish user input</li>
+                        <label for="input3">Do you have any blockers?</label>
+                        <li>No blockers so far.</li>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <strong>Date:</strong> 2024-04-25<br>
+                        <strong>First Name:</strong> Jane<br>
+                        <strong>Last Name:</strong> Smith<br>
+                        <strong>Team:</strong> Team Scrum<br>
+                        <strong>Questions:</strong><br>
+                        <label for="input1">What did you accomplish last sprint?</label>
+                        <li>We made significant progress</li>
+                        <label for="input2">What will you do next sprint?</label>
+                        <li>We will start testing phase</li>
+                        <label for="input3">Do you have any blockers?</label>
+                        <li>No blockers currently.</li>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <strong>Date:</strong> 2024-04-25<br>
+                        <strong>First Name:</strong> Jacob<br>
+                        <strong>Last Name:</strong> Zall<br>
+                        <strong>Team:</strong> Team Scrum<br>
+                        <strong>Questions:</strong><br>
+                        <label for="input1">What did you accomplish last sprint?</label>
+                        <li>We completed all tasks</li>
+                        <label for="input2">What will you do next sprint?</label>
+                        <li>We will refine UI elements</li>
+                        <label for="input3">Do you have any blockers?</label>
+                        <li>No blockers at the moment.</li>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <strong>Date:</strong> 2024-04-25<br>
+                        <strong>First Name:</strong> Tim<br>
+                        <strong>Last Name:</strong> Clayton<br>
+                        <strong>Team:</strong> Team Scrum<br>
+                        <strong>Questions:</strong><br>
+                        <label for="input1">What did you accomplish last sprint?</label>
+                        <li>We implemented new feature</li>
+                        <label for="input2">What will you do next sprint?</label>
+                        <li>We will optimize database queries</li>
+                        <label for="input3">Do you have any blockers?</label>
+                        <li>No blockers encountered.</li>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
             </div>
         </div>
-    </body>
-    </html>
+    </div>
+</body>
+</html>
